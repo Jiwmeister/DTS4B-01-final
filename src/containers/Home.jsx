@@ -45,7 +45,7 @@ export const Home = () => {
       <Typography variant="h1" sx={{ fontSize: '38px', mb: 2 }}>Hot Topics</Typography>
       <Grid container spacing={2}>
         <Grid xs={9}>
-          <NewsHeroCard hotNews handleClick={toDetail} />
+          <NewsHeroCard key={hotNews.id} hotNews={hotNews} handleClick={toDetail} />
         </Grid>
 
         

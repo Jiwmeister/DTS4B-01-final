@@ -29,7 +29,7 @@ export const NewsDetail = () => {
     }
     
     fetchData()
-  }, [])
+  }, [newsId])
   
   console.log(newsId);
   if (!isLoaded) {

@@ -37,8 +37,8 @@ export const Home = () => {
     fetchTopics();
   }, []);
 
-  const toDetail = () => {
-    navigate('/news/detail')
+  const toDetail = (newsId) => {
+    navigate(`/news/${newsId}`)
   }
   return (
     <section className="news-list" style={{ padding: '30px 0' }}>
@@ -51,8 +51,17 @@ export const Home = () => {
         
          <Grid xs={3}>
          <Typography sx={{fontSize: '18px', fontFamily: "'Playfair Display', serif", lineheight: '28px' }}>
-           <Typography variant='span' sx={{ fontSize: '20px' }}>{hotNews.judul}</Typography>, 
-           {hotNews.content} <Link style={{color: '#000', fontWeight: 700, textDecoration: 'none'}} to="/news/detail">read more</Link>
+           <Typography variant='span' sx={{
+            display: '-webkit-box',
+            webkitLineClamp: 3,
+            webkitBoxOrient: 'vertical',
+            height: '384px',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+           }}>
+           {hotNews.content} 
+           </Typography>
+           <Link style={{display: 'inline-block', color: '#000', fontWeight: 700, textDecoration: 'none'}} to="/news/detail">read more</Link>
          </Typography>
        </Grid>
 
